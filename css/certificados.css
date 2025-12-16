@@ -1,0 +1,91 @@
+body {
+  background: #0f172a;
+  color: #f1f5f9;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+}
+
+#certificates {
+  text-align: center;
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 0 1.5rem;
+}
+
+.cert-desc {
+  color: #b3e5fc;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+.certificates-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.certificate-card {
+  background: #1e293b;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.certificate-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0, 188, 212, 0.3);
+}
+
+.certificate-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: opacity 0.3s ease;
+}
+
+.certificate-card:hover img {
+  opacity: 0.85;
+}
+
+.certificate-card h3 {
+  color: #e0f2fe;
+  font-size: 1.1rem;
+  padding: 1rem;
+  min-height: 60px;
+}
+
+.btn-view {
+  display: inline-block;
+  margin-bottom: 1rem;
+  background: #00bcd4;
+  color: #0a192f;
+  padding: 0.5rem 1.2rem;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.btn-view:hover {
+  background: #0097a7;
+  transform: scale(1.05);
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #111827;
+  font-size: 0.9rem;
+  color: #b3e5fc;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .certificate-card img {
+    height: 160px;
+  }
+  .certificate-card h3 {
+    font-size: 1rem;
+  }
+}
