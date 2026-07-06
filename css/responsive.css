@@ -1,0 +1,48 @@
+@media (max-width: 768px) {
+
+  .nav-links {
+    display: none;
+  }
+
+  .hero-container {
+    flex-direction: column;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 6rem 1.5rem 3rem;
+  }
+
+  .hero-image-diagonal {
+    position: relative;
+
+    width: 100%;
+    height: 320px;
+
+    clip-path: none;
+
+    margin-top: 2rem;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+  }
+
+  .hero-content {
+    margin: 0;
+    padding: 0;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+}
