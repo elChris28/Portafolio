@@ -5,10 +5,10 @@ const lifeSlides = [
     description:
       "Comparto contenido sobre programación, tecnología, herramientas digitales y aprendizaje de una forma simple, cercana y útil para estudiantes.",
     image: "img/highlights/tiktok.jpg",
-    miniOne: "+28k comunidad",
+    miniOne: "+220 comunidad",
     miniTwo: "Tech & educación",
     tags: ["TikTok", "Educación", "Tecnología"],
-    link: "https://tiktok.com"
+    link: "https://www.tiktok.com/@chris.jhon_ya"
   },
   {
     category: "Vida universitaria",
