@@ -1,48 +1,195 @@
-@media (max-width: 768px) {
+/* Oculto por defecto en Pantallas Grandes */
+.menu-toggle {
+  display: none;
+}
 
-  .nav-links {
-    display: none;
-  }
-
+/* ==========================================
+   BREAKPOINT: TABLETS Y LAPTOPS (≤ 1024px)
+   ========================================== */
+@media (max-width: 1024px) {
   .hero-container {
-    flex-direction: column;
-    justify-content: center;
-
-    text-align: center;
-
-    padding: 6rem 1.5rem 3rem;
-  }
-
-  .hero-image-diagonal {
-    position: relative;
-
-    width: 100%;
-    height: 320px;
-
-    clip-path: none;
-
-    margin-top: 2rem;
-
-    border-radius: 20px;
-
-    overflow: hidden;
+    padding-top: 5rem;
   }
 
   .hero-content {
-    margin: 0;
-    padding: 0;
+    max-width: 500px;
+    margin-left: 4%;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(2.5rem, 4vw, 3.8rem);
+  }
+
+  .hero-image-diagonal {
+    width: 50%;
+    clip-path: polygon(25% 0, 100% 0, 100% 100%, 0% 100%);
+  }
+}
+
+/* ==========================================
+   BREAKPOINT: MÓVILES (≤ 768px)
+   ========================================== */
+@media (max-width: 768px) {
+  /* 1. Botón Hamburguesa Visibilidad y Estilos */
+  .menu-toggle {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 102; /* Por encima del menú lateral */
+  }
+
+  .menu-toggle span {
+    width: 100%;
+    height: 3px;
+    background-color: var(--text, #ffffff);
+    border-radius: 2px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  /* Animación de X en la hamburguesa */
+  .menu-toggle.is-open span:nth-child(1) {
+    transform: translateY(8.5px) rotate(45deg);
+  }
+
+  .menu-toggle.is-open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle.is-open span:nth-child(3) {
+    transform: translateY(-8.5px) rotate(-45deg);
+  }
+
+  /* 2. Menú Desplegable Lateral */
+  #nav-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 75%;
+    max-width: 225px;
+    height: 100vh;
+    background: rgba(11, 15, 25, 0.98);
+    backdrop-filter: blur(16px);
+    border-left: 1px solid var(--border);
+    padding: 6rem 2rem 2rem;
+    transition: right 0.4s ease-in-out;
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+    z-index: 101;
+  }
+
+  #nav-menu.active {
+    right: 0;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: flex-start;
+  }
+
+  .nav-links a {
+    font-size: 1.2rem;
+  }
+
+  /* 3. Hero Section Adaptativa */
+  .hero-container {
+      flex-direction: column; /* Cambiamos a column normal para que la imagen quede arriba */
+      justify-content: flex-start;
+      min-height: auto;
+      padding: 2rem 1rem 3rem;
+      gap: 1.5rem;
+    }
+
+  .hero-content {
+    margin: 0 auto;
+    padding: 0 1rem;
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(2rem, 6vw, 2.8rem);
+    margin-bottom: 0.5rem;
+  }
+
+  .hero-content h2 {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
   }
 
   .hero-buttons {
     justify-content: center;
+    width: 100%;
+    gap: 0.8rem;
+  }
+
+  .btn {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .hero-image-diagonal {
+      position: relative;
+      width: 100%;
+      max-width: 360px; /* Tamaño máximo para que no ocupe demasiado alto */
+      height: 380px;    /* Altura ideal para móviles */
+      margin: 0 auto;
+      border-radius: 16px; /* Borde suave rectangular, sin círculo */
+      clip-path: none;     /* Quitamos el recorte diagonal deformado */
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    }
+
+  .hero-image-diagonal img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top; /* Asegura enfocar el rostro */
+      opacity: 1;                  /* Imagen nítida */
+      filter: none;
+    }
+
+  .hero-image-diagonal::after {
+    /* Gradiente suave en la base de la imagen para integrar con el fondo */
+    background: linear-gradient(to top, rgba(9, 18, 32, 0.8) 0%, transparent 40%);
+  }
+
+  .diagonal-line {
+    display: none;
+  }
+
+  /* 4. Footer Responsivo */
+  footer {
+    padding: 3rem 1.5rem 1.5rem;
   }
 
   .footer-content {
     grid-template-columns: 1fr;
     text-align: center;
+    gap: 2.5rem;
   }
 
   .social-links {
     justify-content: center;
+  }
+}
+
+/* ==========================================
+   BREAKPOINT: MÓVILES PEQUEÑOS (≤ 480px)
+   ========================================== */
+@media (max-width: 480px) {
+  .hero-image-diagonal {
+    width: 190px;
+    height: 190px;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
   }
 }

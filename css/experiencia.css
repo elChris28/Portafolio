@@ -5,15 +5,16 @@
 .experience-page {
   max-width: 1100px; 
   margin: 0 auto;
-
+  padding: 0 1.5rem; /* Margen de seguridad lateral por defecto */
   background: transparent;
   --b-accent: #d4ca73;
+  overflow-x: hidden; /* Evita scroll horizontal accidental */
 }
 
 /* 1. HERO DE INTRODUCCIÓN */
 .experience-hero {
   max-width: 800px;
-  margin: 2rem 0 5rem 0;
+  margin: 2rem 0 4rem 0;
 }
 
 .experience-hero .tech-tag {
@@ -27,7 +28,7 @@
 }
 
 .experience-hero h1 {
-  font-size: clamp(2.5rem, 5vw, 3.8rem);
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
   font-weight: 700;
   color: var(--text);
   line-height: 1.15;
@@ -47,6 +48,7 @@
   margin-top: 2rem;
   font-size: 0.9rem;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .location-tag {
@@ -84,7 +86,7 @@
 .timeline-container {
   position: relative;
   padding-left: 1.5rem;
-  border-left: 1px solid var(--border); /* Línea más fina y seria */
+  border-left: 1px solid var(--border);
   display: flex;
   flex-direction: column;
   gap: 3rem;
@@ -105,7 +107,6 @@
   border: 1px solid var(--bg);
 }
 
-/* Resalte exclusivo para tu rol de analista principal */
 .timeline-item.featured .timeline-dot {
   background: var(--accent);
   box-shadow: 0 0 8px var(--accent);
@@ -156,17 +157,17 @@
   padding: 0.3rem 0.6rem;
   border-radius: 4px;
   border: 1px solid var(--border);
+  white-space: nowrap;
 }
 
-/* Distribución en dos columnas para responsabilidades e impacto */
+/* GRID RESPONSIVO PARA DETALLES */
 .timeline-details {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
   gap: 2rem;
 }
 
 .details-block h4 {
-  color: var(--text);
   font-size: 0.9rem;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -179,6 +180,8 @@
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
+  padding: 0;
+  margin: 0;
 }
 
 .details-block li {
@@ -187,6 +190,7 @@
   line-height: 1.6;
   position: relative;
   padding-left: 1.2rem;
+  word-break: break-word; /* Asegura que textos largos no desborden */
 }
 
 .details-block li::before {
@@ -196,7 +200,7 @@
   color: var(--accent);
 }
 
-/* Modificadores para puestos antiguos (Menos carga visual) */
+/* Modificadores para puestos antiguos */
 .standard-job .timeline-body {
   background: transparent;
   padding: 1.5rem 0 0 0;
@@ -214,12 +218,6 @@
   max-width: 800px;
 }
 
-.project-link-wrapper {
-  margin-top: 1.8rem;
-  border-top: 1px solid var(--border);
-  padding-top: 1.5rem;
-}
-
 /* 3. COMBINACIÓN DE CONOCIMIENTOS Y CERTIFICADOS */
 .knowledge-section {
   margin-bottom: 3rem;
@@ -227,7 +225,7 @@
 
 .knowledge-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
   gap: 3rem;
   border-top: 1px solid var(--border);
   padding-top: 3rem;
@@ -260,50 +258,66 @@
   background: rgba(255, 255, 255, 0.02);
 }
 
-/* 4. SECCIÓN CALL TO ACTION FINALES */
-#experience-cta {
-  border-top: 1px solid var(--border);
-  padding: 5rem 0 2rem;
-  text-align: center;
+/* ANIMACIÓN DE ENTRADA (REVEAL) */
+.xp-reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
-#experience-cta h2 {
-  font-size: 1.8rem;
-  color: var(--text);
-  margin-bottom: 0.8rem;
+.xp-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-#experience-cta p {
-  color: var(--text-soft);
-  max-width: 500px;
-  margin: 0 auto 2rem;
-  font-size: 1rem;
-  line-height: 1.6;
-}
-
-.cta-buttons {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-/* RESPONSIVE DESIGN NATIVO */
+/* =========================================================
+   RESPONSIVE DESIGN NATIVO (OPTIMIZADO PARA MÓVILES)
+========================================================= */
 @media (max-width: 768px) {
   .experience-page {
-    padding: 2rem 1.2rem 4rem;
+    padding: 1.5rem 1rem 3rem 1rem;
   }
   
+  .experience-hero {
+    margin: 1rem 0 3rem 0;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+  }
+
+  .timeline-container {
+    padding-left: 1rem; /* Reducimos padding para ganar espacio */
+  }
+
+  .timeline-dot {
+    left: calc(-1rem - 4.5px);
+  }
+
+  .timeline-item.featured .timeline-dot {
+    left: calc(-1rem - 5.5px);
+  }
+
+  .timeline-body {
+    padding: 1.25rem; /* Ajustamos padding de la tarjeta para móviles */
+  }
+
   .timeline-header {
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0.4rem;
   }
-  
+
   .timeline-header time {
     align-self: flex-start;
   }
 
+  .timeline-details {
+    gap: 1.5rem;
+  }
+
   .knowledge-container {
     gap: 2rem;
+    padding-top: 2rem;
   }
 }

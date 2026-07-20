@@ -1,7 +1,36 @@
-    // Animación de scroll
-    const faders = document.querySelectorAll(".fade-in");
-    const appearOptions = { threshold: 0.3 };
+document.addEventListener('DOMContentLoaded', () => {
+  // 1. Menú Hamburguesa (Protegido)
+  const menuToggle = document.getElementById('menu-toggle');
+  const navMenu = document.getElementById('nav-menu');
 
+  if (menuToggle && navMenu) {
+    menuToggle.addEventListener('click', (e) => {
+      e.stopPropagation(); // Evita interferencias de clics
+      navMenu.classList.toggle('active');
+      menuToggle.classList.toggle('is-open');
+    });
+
+    // Cerrar menú al hacer clic en un enlace
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+        menuToggle.classList.remove('is-open');
+      });
+    });
+
+    // Cerrar menú si se hace clic fuera de él
+    document.addEventListener('click', (e) => {
+      if (!navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+        navMenu.classList.remove('active');
+        menuToggle.classList.remove('is-open');
+      }
+    });
+  }
+
+  // 2. Animación de scroll (Protegido)
+  const faders = document.querySelectorAll(".fade-in");
+  if (faders.length > 0) {
+    const appearOptions = { threshold: 0.3 };
     const appearOnScroll = new IntersectionObserver(function(entries, observer) {
       entries.forEach(entry => {
         if (!entry.isIntersecting) return;
@@ -13,11 +42,12 @@
     faders.forEach(fader => {
       appearOnScroll.observe(fader);
     });
+  }
 
-    // Partículas animadas
-    const canvas = document.getElementById("particles");
+  // 3. Partículas animadas (SÓLO si existe el canvas #particles en la página)
+  const canvas = document.getElementById("particles");
+  if (canvas) {
     const ctx = canvas.getContext("2d");
-
     let particlesArray = [];
     let hue = 20;
 
@@ -80,14 +110,19 @@
     window.addEventListener("resize", initParticles);
     initParticles();
     drawParticles();
+  }
 
-    // Scroll suave
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
+  // 4. Scroll suave
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const targetId = this.getAttribute('href');
+      if (targetId !== '#') {
+        const target = document.querySelector(targetId);
         if (target) {
+          e.preventDefault();
           target.scrollIntoView({ behavior: 'smooth' });
         }
-      });
+      }
     });
+  });
+});
