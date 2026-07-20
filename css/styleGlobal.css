@@ -5,27 +5,27 @@
     }
 
     :root {
-      --bg: #0a0a0a;
-      --bg-secondary: #121212;
-      --card-bg: #1b1b1b;
+/* Fondos oscuros profundos con tinte azulado */
+  --bg: #091220;
+  --bg-secondary: #000000;
+  --card-bg: #161e30;
 
-      --text: #f5f5f5;
-      --text-soft: #b3b3b3;
+  /* Textos nítidos y legibles */
+  --text: #f8fafc;
+  --text-soft: #94a3b8;
 
-      --accent: #d4a373;
-      --accent-light: #e6b98d;
-      --hover: #bc8a5f;
+  /* Acento cyan elegante y sin transparencias raras */
+  --accent: #dac96ac9;
+  --accent-light: #44bbee;
+  --hover: #0284c7;
 
-      --border: rgba(255,255,255,0.08);
+  /* Bordes suaves */
+  --border: rgba(255, 255, 255, 0.08);
     }
 
 body {
   font-family: "Poppins", sans-serif;
-  background: linear-gradient(
-    to bottom,
-    #0a0a0a,
-    #111111
-  );
+  background: linear-gradient(180deg, var(--bg) 0%, var(--bg-secondary) 100%);
 
   color: var(--text);
   overflow-x: hidden;
@@ -36,7 +36,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 1.2rem 5%;
-  background: rgba(10, 10, 10, 0.75);
+  background: rgba(29, 28, 28, 0.745);
 
   position: sticky;
   top: 0;
@@ -274,10 +274,6 @@ body {
 
 .hero-content .name-highlight {
   color: var(--accent);
-
-  text-shadow:
-    0 0 10px rgba(212,163,115,0.4);
-
   display: block;
 }
 
@@ -322,19 +318,16 @@ body {
 .btn-primary {
   background: var(--accent);
 
-  color: #111;
-
-  box-shadow:
-    0 10px 30px rgba(212,163,115,0.25);
+  color: #090d16; /* Color de fondo oscuro para buen contraste */
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
 }
 
 .btn-primary:hover {
   background: var(--accent-light);
 
-  transform: translateY(-4px);
+  transform: translateY(-2px);
 
-  box-shadow:
-    0 15px 35px rgba(212,163,115,0.35);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
 }
 
 .btn-secondary {
@@ -415,14 +408,14 @@ body {
 
     .footer-section h3 {
       color: var(--accent);
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       margin-bottom: 1rem;
     }
 
     .footer-section p {
-      color: #94a3b8;
+      color: #b0b4bb;
       line-height: 1.6;
-      font-size: 1.2rem;
+      font-size: 0.95rem;
     }
 
     .social-links {

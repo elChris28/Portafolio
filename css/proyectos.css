@@ -8,14 +8,14 @@ body .projects-page {
   --b-border: rgba(255, 255, 255, 0.08);
   --b-text-main: #f8fafc;
   --b-text-muted: #94a3b8;
-  --b-accent: #d4a373;
+  --b-accent: #d4ca73;
   --b-accent-rgb: 212, 163, 115;
   --b-radius: 20px;
   
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 4rem 1.5rem;
+  padding: 2rem 3rem;
   box-sizing: border-box;
 }
 
