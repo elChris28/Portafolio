@@ -23,10 +23,10 @@ const lifeSlides = [
   },
   {
     category: "Hobbies",
-    title: "Creatividad fuera de pantalla",
+    title: "Creatividad y pasatiempos",
     description:
       "Me gusta explorar actividades que despierten creatividad, disciplina y nuevas ideas para aplicar en proyectos personales y profesionales.",
-    image: "img/highlights/hobbies.jpg",
+    image: "img/highlights/hobbies.png",
     miniOne: "Creatividad",
     miniTwo: "Aprendizaje continuo",
     tags: ["Hobbies", "Ideas", "Creatividad"],
