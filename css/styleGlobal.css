@@ -26,9 +26,12 @@
 body {
   font-family: "Poppins", sans-serif;
   background: linear-gradient(180deg, var(--bg) 0%, var(--bg-secondary) 100%);
-
   color: var(--text);
   overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100dvh;
 }
     /* Navbar */
 .navbar {
@@ -93,7 +96,7 @@ body {
   position: relative;
   width: 100%;
   min-height: 90vh;
-
+  flex: 1;
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -393,7 +396,7 @@ body {
       background: #0b0b0b;
 
       border-top: 1px solid var(--border);
-
+      margin-top: auto;
       padding: 4rem 2rem 2rem;
     }
 
