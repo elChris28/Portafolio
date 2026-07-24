@@ -3,9 +3,9 @@
 ========================================================= */
 
 .experience-page {
-  max-width: 1100px; 
+  max-width: 1200px; 
   margin: 0 auto;
-  padding: 0 1.5rem; /* Margen de seguridad lateral por defecto */
+  padding: 0 1.5rem; 
   background: transparent;
   --b-accent: #d4ca73;
   overflow-x: hidden; /* Evita scroll horizontal accidental */

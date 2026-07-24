@@ -3,7 +3,8 @@
 ========================================================= */
 
 .contact-page-container {
-  max-width: 79%;
+  width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 2rem 3rem;
   --b-accent: #d4ca73;
@@ -154,7 +155,7 @@ font-size: 1.5rem;
 /* Ajustes responsivos */
 @media (max-width: 768px) {
   .contact-page-container {
-    padding: 3rem 1.2rem 5rem;
+    padding: 2.5rem 1rem;
   }
   
   .contact-header {

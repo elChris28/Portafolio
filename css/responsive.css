@@ -98,62 +98,79 @@
 
   /* 3. Hero Section Adaptativa */
   .hero-container {
-      flex-direction: column; /* Cambiamos a column normal para que la imagen quede arriba */
-      justify-content: flex-start;
-      min-height: auto;
-      padding: 2rem 1rem 3rem;
-      gap: 1.5rem;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: center !important; /* Agrupa todo al centro en vez de empujarlo a los extremos */
+      align-items: center !important;
+      min-height: calc(100vh - 200px) !important;
+      padding: 1.5rem 1rem !important;
+      gap: 1rem !important; /* Controla la distancia exacta entre imagen, texto y botones */
     }
 
+  /* 2. Reducción y ajuste del texto */
   .hero-content {
     margin: 0 auto;
-    padding: 0 1rem;
+    padding: 0;
     max-width: 100%;
     text-align: center;
+    z-index: 3;
   }
 
   .hero-content h1 {
-    font-size: clamp(2rem, 6vw, 2.8rem);
-    margin-bottom: 0.5rem;
+    font-size: 1.8rem; /* Tamaño más pequeño para evitar saltos de línea largos */
+    line-height: 1.2;
+    margin-bottom: 0.4rem;
   }
 
   .hero-content h2 {
-    font-size: 1.1rem;
-    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+    margin-bottom: 1.2rem !important;
   }
 
+  /* 4. Botones colocados abajo en 1 sola fila */
   .hero-buttons {
+    display: flex;
+    flex-direction: row; /* Fuerza 1 sola fila */
     justify-content: center;
     width: 100%;
-    gap: 0.8rem;
+    max-width: 360px;
+    gap: 0.6rem;
+    margin-top: 0.8rem !important;
   }
 
   .btn {
-    width: 100%;
-    max-width: 280px;
+    flex: 1; /* Reparte el ancho equitativamente entre los 2 botones */
+    padding: 0.8rem 0.5rem;
+    font-size: 0.85rem;
+    text-align: center;
+    border-radius: 10px;
   }
 
+  /* 3. Reordenamiento y tamaño de la imagen (de absolute a relative) */
   .hero-image-diagonal {
-      position: relative;
-      width: 100%;
-      max-width: 360px; /* Tamaño máximo para que no ocupe demasiado alto */
-      height: 380px;    /* Altura ideal para móviles */
-      margin: 0 auto;
-      border-radius: 16px; /* Borde suave rectangular, sin círculo */
-      clip-path: none;     /* Quitamos el recorte diagonal deformado */
-      overflow: hidden;
-      border: 1px solid var(--border);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-    }
+    position: relative;
+    top: auto;
+    right: auto;
+    width: 100%;
+    max-width: 280px; /* Ancho máximo controlado */
+    height: 260px;    /* Altura fija para que no se deforme ni alargue */
+    margin: 0.5rem auto;
+    border-radius: 16px;
+    clip-path: none;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  }
 
   .hero-image-diagonal img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center top; /* Asegura enfocar el rostro */
-      opacity: 1;                  /* Imagen nítida */
-      filter: none;
-    }
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 20%; /* Centra la vista en el rostro */
+    opacity: 1;
+    transform: none;
+    filter: contrast(1.05);
+  }
 
   .hero-image-diagonal::after {
     /* Gradiente suave en la base de la imagen para integrar con el fondo */
@@ -184,12 +201,17 @@
    BREAKPOINT: MÓVILES PEQUEÑOS (≤ 480px)
    ========================================== */
 @media (max-width: 480px) {
-  .hero-image-diagonal {
-    width: 190px;
-    height: 190px;
+  .hero-content h1 {
+    font-size: 1.6rem;
   }
 
-  .hero-content h1 {
-    font-size: 2rem;
+  .hero-image-diagonal {
+    max-width: 240px;
+    height: 230px;
+  }
+
+  .btn {
+    font-size: 0.8rem;
+    padding: 0.75rem 0.4rem;
   }
 }

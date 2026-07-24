@@ -4,7 +4,7 @@ const lifeSlides = [
     title: "Creador de contenido Tech",
     description:
       "Comparto contenido sobre programación, tecnología, herramientas digitales y aprendizaje de una forma simple, cercana y útil para estudiantes.",
-    image: "img/highlights/tiktok.jpg",
+    image: "img/highlights/comunidad.png",
     miniOne: "+220 comunidad",
     miniTwo: "Tech & educación",
     tags: ["TikTok", "Educación", "Tecnología"],
@@ -15,7 +15,7 @@ const lifeSlides = [
     title: "Talleres, cultura y aprendizaje",
     description:
       "Participo en espacios académicos y culturales donde desarrollo habilidades de comunicación, liderazgo y colaboración con otros estudiantes.",
-    image: "img/highlights/universidad.jpg",
+    image: "img/highlights/universidad.png",
     miniOne: "Universidad",
     miniTwo: "Cultura & talleres",
     tags: ["Talleres", "Cultura", "Comunidad"],
@@ -32,17 +32,7 @@ const lifeSlides = [
     tags: ["Hobbies", "Ideas", "Creatividad"],
     link: "#"
   },
-  {
-    category: "Comunidad",
-    title: "Compartir lo que aprendo",
-    description:
-      "Creo que enseñar también es una forma de aprender. Por eso comparto experiencias, recursos y aprendizajes con personas que están iniciando.",
-    image: "img/highlights/comunidad.jpg",
-    miniOne: "Aprender enseñando",
-    miniTwo: "Comunidad tech",
-    tags: ["Mentoría", "Contenido", "Colaboración"],
-    link: "#"
-  }
+
 ];
 
 const lifeCard = document.querySelector(".life-card");
