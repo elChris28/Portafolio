@@ -102,6 +102,7 @@
       flex-direction: column !important;
       justify-content: center !important; /* Agrupa todo al centro en vez de empujarlo a los extremos */
       align-items: center !important;
+      flex: 1 !important;
       min-height: calc(100vh - 200px) !important;
       padding: 1.5rem 1rem !important;
       gap: 1rem !important; /* Controla la distancia exacta entre imagen, texto y botones */
