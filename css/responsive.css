@@ -30,6 +30,11 @@
    BREAKPOINT: MÓVILES (≤ 768px)
    ========================================== */
 @media (max-width: 768px) {
+
+  body{
+    overflow-x: hidden
+  }
+
   /* 1. Botón Hamburguesa Visibilidad y Estilos */
   .menu-toggle {
     display: flex !important;
